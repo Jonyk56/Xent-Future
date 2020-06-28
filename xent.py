@@ -113,6 +113,14 @@ def lex(v1):
           no_brk = 0
           stri = ""
         
+        elif state == 0 and stri == "@hold1":
+          sleep(1)
+          
+        elif state == 0 and stri == "@hold2":
+          sleep(2)
+          
+        elif state == 0 and stri == "@hold3":
+          sleep(3)
         #======================
         #previous character
         prev_char = char
@@ -121,6 +129,5 @@ def run():
     gi = open(argv[1], "r")
     gi = gi.read()
     lex(gi)
-
-
+    
 run()
