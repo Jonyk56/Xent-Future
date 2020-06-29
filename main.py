@@ -3,22 +3,34 @@ import sys
 import logging
 from datetime import datetime
 import argparse
+import subprocess
 
 #-----------------------------
-# XentInterpret 1.0.0
+# XentInterpret 2
 # copyright 2020, 17lwinn
 
-parser = argparse.ArgumentParser(prog='xent', description='XenText... mainASTERED')
-parser.add_argument('--version', action='version', version='%(prog)s 2.0', help='view the CLI version')
-args = parser.parse_args()
-print(args)
 
-print("XenText interpreter 1.0.0")
+
+parser = argparse.ArgumentParser(prog='xent', description='XenText... remastered')
+parser.add_argument('--version', action='version', version='%(prog)s 2.0', help='view the CLI version')
+parser.add_argument('-r', '--run', metavar='script/path', help='Run your XenText scripts');
+
+args = parser.parse_args()
+
+if args.run:
+    scriptname = args.run
+    os.system("python3 xent.py " + scriptname)
+    exit()
+
+
+
+print("XenText interpreter")
+
 print("type xenText code here and type run() to execute")
 print("or exit() to exit the interpreter")
 def main():
   while True:
-        cliprompt()
+    cliprompt()
         
 def cliprompt():
       code = input(">>> ")
