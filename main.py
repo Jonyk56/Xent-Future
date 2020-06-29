@@ -3,10 +3,14 @@ import sys
 import logging
 from datetime import datetime
 import argparse
+import platform
 import subprocess
-from config import *
+try:
+   from config import *
+except ImportError:
+  print("Configuration file does not exist, you may have issues down the line")
 #-----------------------------
-# XentInterpret 2
+# XentInterpret 2.0.0
 # copyright 2020, 17lwinn
 
 
@@ -17,16 +21,17 @@ args = parser.parse_args()
 
 if args.run:
   if DISABLE_SCRIPT_EXECUTION == "false":
-    scriptname = args.run
-    os.system("python3  " + PARSER_LOCATION + scriptname)
-    exit()
+      scriptname = args.run
+      os.system("python3  " + PARSER_LOCATION + scriptname)
+      exit()
+    
   if DISABLE_SCRIPT_EXECUTION == "true":
     print("Remote script execution has been disabled, please change DISABLE_SCRIPT_EXECUTION to false")
     print("")
 
 
 print("XenText interpreter")
-
+print(platform.system(), platform.architecture())
 print("type xenText code here and type run() to execute")
 print("or exit() to exit the interpreter")
 def main():
