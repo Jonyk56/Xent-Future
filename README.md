@@ -20,9 +20,9 @@ Xent comes with a selection of command line flags. You execute them with the sta
 python3 main.py <flags>
 ```
 
-`-h` - view help text
-`--version` - view CLI version
-`-r <scriptname/path>` - run a ,xt file through the lexer
+`-h` - view help text<br>
+`--version` - view CLI version<br>
+`-r <scriptname/path>` - run a .xt file through the lexer<br>
 
 if you want to enter the interpreter, just run 
 ```python
