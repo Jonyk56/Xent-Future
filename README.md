@@ -42,6 +42,18 @@ Type any Xent code into the interpreter and it will save to a file, this file is
 
 ---------------------------------
 
+# configuration file
+
+Xent reads CLI configuration from **config.py**, which must exist for the CLI to run. You can use the 
+following sample to save hassle:
+
+```python
+PARSER_LOCATION = "xent.py " # Add a space after the name or you'll have issues
+DISABLE_SCRIPT_EXECUTION = "false" # Stop Xent from executing your scripts and run code only from the interpreter
+```
+
+---------------------------------
+
 # quite obvious small print
 
 > &copy; 2020 17lwinn/XentDevs
