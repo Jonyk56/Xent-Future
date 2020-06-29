@@ -11,7 +11,7 @@ import subprocess
 
 
 
-parser = argparse.ArgumentParser(prog='xent', description='XenText... remastered')
+parser = argparse.ArgumentParser(prog='python3 main.py', description='XenText... remastered')
 parser.add_argument('--version', action='version', version='%(prog)s 2.0', help='view the CLI version')
 parser.add_argument('-r', '--run', metavar='script/path', help='Run your XenText scripts');
 
