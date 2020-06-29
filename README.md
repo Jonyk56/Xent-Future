@@ -37,7 +37,7 @@ Type any Xent code into the interpreter and it will save to a file, this file is
 
 1. `run()` - run any code you typed in earlier
 2. `forcerun()`- run any code WITHOUT UNLINKING THE FILE
-3. `exit()` - exit the interpreter
+3. `exit()` - exit the interpreter/unlink all session files
 4. `moomoo()` - :D we brought a cow!
 
 ---------------------------------
