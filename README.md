@@ -50,6 +50,7 @@ following sample to save hassle:
 ```python
 PARSER_LOCATION = "xent.py " # Add a space after the name or you'll have issues
 DISABLE_SCRIPT_EXECUTION = "false" # Stop Xent from executing your scripts and run code only from the interpreter
+INSTALLED_PACKAGES = [] # packages ( quick complex, leave it to the experts!)
 ```
 
 ---------------------------------
@@ -57,4 +58,4 @@ DISABLE_SCRIPT_EXECUTION = "false" # Stop Xent from executing your scripts and r
 # quite obvious small print
 
 > &copy; 2020 17lwinn/XentDevs
-
+> &copy; 2020 Jonyk56 ( Creator )
