@@ -2,10 +2,15 @@ from sys import argv, dont_write_bytecode
 dont_write_bytecode = True
 from time import *
 import os
+import importlib.util
+import sys
+import config as config
 
-
+modules_ = {}
 
 def lex(v1):
+    pl_run = []
+    #^ plugins to run each time
     output = ""
     # list
     LIN = list(v1)
@@ -25,7 +30,7 @@ def lex(v1):
     location = 0
     no_brk = 0
     cmd_run = ""
-    
+    importing = ""
         
     args = argv[2:]
       
@@ -43,7 +48,6 @@ def lex(v1):
     prev_char=""
     for char in LIN:
         location += 1
-
         stri += char
         #print (str)
         if char == " " and ( state == 0 or state == -1 ) and in_str == 0:
@@ -121,13 +125,47 @@ def lex(v1):
           
         elif state == 0 and stri == "@hold3":
           sleep(3)
+
+
+        #plugins
+        elif state == 0 and stri == "@import":
+          state = 5
+          stri = ""
+        elif (char == "\"" or char == "\'") and state == 5 and in_str == 0:
+          in_str = 1
+          stri = ""
+        elif state == 5 and in_str == 1 and (char == "\"" or char == "\'"):
+          in_str = 0
+          pl_run.append(stri[:-1])
+          state = 0
+        #plugin runner 
+
+        for plugin in pl_run:
+          exists =modules_.get(plugin, None)
+          dhx = {"LIN":"","state":0, "stri":"","prev_char":"","in_str":0}
+          dhx["LIN"] = LIN
+          dhx["state"] = state
+          dhx["stri"] = stri
+          dhx["prev_char"] = prev_char
+          dhx["in_str"] = in_str
+          abx = modules_[plugin].run(**dhx)
+          stri = abx["stri"]
+          state = abx["state"]
+          in_str = abx["in_str"]
         #======================
         #previous character
         prev_char = char
+        
+
 # run definition
 def run():
     gi = open(argv[1], "r")
     gi = gi.read()
+    for mod_ in config.INSTALLED_PACKAGES:
+      module_name = mod_.split(".")[0]
+      print(module_name)
+      sys.path.append("./" + mod_)
+      modules_[mod_] = __import__(module_name)
     lex(gi)
     
 run()
