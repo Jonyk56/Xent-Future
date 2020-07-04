@@ -15,7 +15,7 @@ EXPERIMENTAL_MODE = "true" # see beta features first, may bite!
 # declare any plugin folders and these will be ran on script execution
 #EXAMPLE: INSTALLED_PACKAGES = ["util.main", "util.process"]
 #each plugin must be properly coded to work with the most recent zent version
-INSTALLED_PACKAGES = []
+INSTALLED_PACKAGES = ["xent.main"]
 
 #----------------------------------------------------------------
 

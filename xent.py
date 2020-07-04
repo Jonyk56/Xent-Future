@@ -142,12 +142,13 @@ def lex(v1):
 
         for plugin in pl_run:
           exists =modules_.get(plugin, None)
-          dhx = {"LIN":"","state":0, "stri":"","prev_char":"","in_str":0}
+          dhx = {"LIN":"","state":0, "stri":"","prev_char":"","in_str":0, "location":0}
           dhx["LIN"] = LIN
           dhx["state"] = state
           dhx["stri"] = stri
           dhx["prev_char"] = prev_char
           dhx["in_str"] = in_str
+					djx["location"] = location
           abx = modules_[plugin].run(**dhx)
           stri = abx["stri"]
           state = abx["state"]
