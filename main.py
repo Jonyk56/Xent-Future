@@ -37,7 +37,7 @@ if args.search:
   packagesearch = args.search
   os.system("curl -s -L https://raw.githubusercontent.com/ProTech-IT-Solutions/xentext-addon-registry/master/" + packagesearch + "/info.py | python")
   exit()
-print("XenText interpreter")
+print("XenText interpreter " + INTERPRETER_VERSION)
 
 print("type xenText code here and type run() to execute")
 print("or exit() to exit the interpreter")

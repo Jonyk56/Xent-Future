@@ -52,6 +52,35 @@ PARSER_LOCATION = "xent.py " # Add a space after the name or you'll have issues
 DISABLE_SCRIPT_EXECUTION = "false" # Stop Xent from executing your scripts and run code only from the interpreter
 INSTALLED_PACKAGES = [] # packages ( quick complex, leave it to the experts!)
 ```
+---------------------------------
+
+# plugins
+
+xentext plugins are small python files that are run on execution
+
+these are declared in config.py under INSTALLED_PACKAGES and can change your xentext
+experience. It can be anything from colouring to just printing text the 'proper' way
+
+To install a plugin, go to [our registry](https://github.com/ProTech-IT-Solutions/xentext-addon-registry) and then run this command:
+
+you must have EXPERIMENTAL_MODE set to 'true' to do this!
+
+```
+python3 main.py -i <folder name>
+```
+
+go into the file and make a mental note of the path to the main file. Then go to config.py and link it by the array like this:
+
+```
+INSTALLED_PACKAGES = ["pathtopackage/mainfile.py"]
+```
+
+run a script, it should be ready to go!
+
+---------------------------------
+# making an addon
+
+Go to [our registry](https://github.com/ProTech-IT-Solutions/xentext-addon-registry) and then run this command:
 
 ---------------------------------
 
