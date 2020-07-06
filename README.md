@@ -20,9 +20,9 @@ Xent comes with a selection of command line flags. You execute them with the sta
 python3 main.py <flags>
 ```
 
-`-h` - view help text<br>
-`--version` - view CLI version<br>
-`-r <scriptname/path>` - run a .xt file through the lexer<br>
+-`-h` - view help text
+-`--version` - view CLI version
+-`-r <scriptname/path>` - run a .xt file through the lexer
 
 if you want to enter the interpreter, just run 
 ```python
@@ -69,18 +69,22 @@ you must have EXPERIMENTAL_MODE set to 'true' to do this!
 python3 main.py -i <folder name>
 ```
 
-go into the file and make a mental note of the path to the main file. Then go to config.py and link it by the array like this:
+go into the folder and make a mental note of the path to the main file. Then go to config.py and link it by the array like this:
 
 ```
 INSTALLED_PACKAGES = ["pathtopackage/mainfile.py"]
 ```
 
-run a script, it should be ready to go!
+run a script, it should be ready to go!, you can use multiple files like this:
+
+```
+INSTALLED_PACKAGES = ["path/main.py", "anotherpath/file.py"]
+```
 
 ---------------------------------
 # making an addon
 
-Go to [our registry](https://github.com/ProTech-IT-Solutions/xentext-addon-registry) and then run this command:
+Go to [our registry](https://github.com/ProTech-IT-Solutions/xentext-addon-registry) and then follow the instructions in the wiki
 
 ---------------------------------
 
